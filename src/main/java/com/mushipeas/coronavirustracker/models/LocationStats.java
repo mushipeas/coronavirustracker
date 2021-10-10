@@ -1,4 +1,4 @@
-package com.mushipeas.coronavirustracker.services.models;
+package com.mushipeas.coronavirustracker.models;
 
 public class LocationStats {
     private String state;

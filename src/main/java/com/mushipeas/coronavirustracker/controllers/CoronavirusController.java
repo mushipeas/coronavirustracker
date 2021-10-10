@@ -1,4 +1,4 @@
-package com.mushipeas.coronavirustracker.services.controllers;
+package com.mushipeas.coronavirustracker.controllers;
 
 import com.mushipeas.coronavirustracker.services.CoronavirusDataService;
 
@@ -8,13 +8,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class coronavirusController {
+public class CoronavirusController {
     
     @Autowired
     CoronavirusDataService coronavirusDataService;
     
     @GetMapping("/")
-    public String index(Model model){
+    public String Index(Model model){
         model.addAttribute("locationStats", coronavirusDataService.getAllLocationStats());
         model.addAttribute("totalReportedCases", coronavirusDataService.getTotalReportedCases());
         model.addAttribute("newCasesToday", coronavirusDataService.getNewCasesToday());

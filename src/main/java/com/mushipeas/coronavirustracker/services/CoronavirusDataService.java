@@ -11,7 +11,7 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
-import com.mushipeas.coronavirustracker.services.models.LocationStats;
+import com.mushipeas.coronavirustracker.models.LocationStats;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
@@ -20,13 +20,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CoronavirusDataService {
-    private static String COVID_DATA_URL = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
 
-private List<LocationStats> allLocationStats = new ArrayList<>();
+    private static String COVID_DATA_URL = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+    private List<LocationStats> allLocationStats = new ArrayList<>();
 
     @PostConstruct
     @Scheduled(cron = "* * 1 * * *")
-    public void fetchCovidData(){
+    public void fetchCovidData() {
         List<LocationStats> updatedLocationStats = new ArrayList<>();
         
         HttpClient client = HttpClient.newHttpClient();
