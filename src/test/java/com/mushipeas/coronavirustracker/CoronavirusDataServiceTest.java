@@ -32,7 +32,6 @@ class CoronavirusDataServiceTest {
         verifyNoMoreInteractions(coronavirusDAO);
     }
 
-
     @Test
     void fetchesTotalReportedCases() {
         // when
@@ -41,7 +40,6 @@ class CoronavirusDataServiceTest {
         verify(coronavirusDAO).calculateTotalReportedCases();
         verifyNoMoreInteractions(coronavirusDAO);
     }
-
 
     @Test
     void fetchesNewCasesToday() {
