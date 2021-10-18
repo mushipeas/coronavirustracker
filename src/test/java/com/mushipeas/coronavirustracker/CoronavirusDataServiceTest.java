@@ -10,6 +10,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
 
 @ExtendWith(MockitoExtension.class)
 class CoronavirusDataServiceTest {
@@ -28,6 +29,7 @@ class CoronavirusDataServiceTest {
         underTest.getAllLocationStats();
         // then
         verify(coronavirusDAO).selectAllLocationStats();
+        verifyNoMoreInteractions(coronavirusDAO);
     }
 
 
@@ -37,6 +39,7 @@ class CoronavirusDataServiceTest {
         underTest.getTotalReportedCases();
         // then
         verify(coronavirusDAO).calculateTotalReportedCases();
+        verifyNoMoreInteractions(coronavirusDAO);
     }
 
 
@@ -46,6 +49,7 @@ class CoronavirusDataServiceTest {
         underTest.getNewCasesToday();
         // then
         verify(coronavirusDAO).calculateNewCasesToday();
+        verifyNoMoreInteractions(coronavirusDAO);
     }
 
 }
