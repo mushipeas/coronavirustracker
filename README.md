@@ -1,5 +1,5 @@
 # Coronavirus Tracker (Spring Boot)
-![build](https://github.com/mushipeas/coronavirustracker/blob/master/.github/workflows/maven.yml/badge.svg)
+![build](https://github.com/mushipeas/coronavirustracker/actions/workflows/maven.yml/badge.svg)
 
 A SpringBoot application which displays daily covid case rates, split across regions, as well as calculated total and daily case-rates.
 
